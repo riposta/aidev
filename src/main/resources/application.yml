@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: aidev
+  ai:
+    openai:
+      api-key: SET_VALUE
+client:
+  openaimoderationapi:
+    url: https://api.openai.com/v1
+  aidevs:
+    url: https://tasks.aidevs.pl
+    apiKey: SET_VALUE
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 600000
+        readTimeout: 600000
+
+task: blogger
