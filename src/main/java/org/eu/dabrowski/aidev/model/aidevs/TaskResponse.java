@@ -12,4 +12,5 @@ public class TaskResponse {
     String msg;
     JsonNode input;
     JsonNode blog;
+    String answer;
 }

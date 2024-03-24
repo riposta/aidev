@@ -32,7 +32,7 @@ public class ModerationTask extends AbstractTask {
 
     @Override
     @SneakyThrows
-    JsonNode compute(TaskResponse taskResponse) {
+    Object compute(TaskResponse taskResponse) {
         List<Integer> responseList = new ArrayList<>();
         for (String line : jsonNodeToList(taskResponse.getInput())) {
             JsonNode response = moderationApiClient.postModeration("Bearer " + openAiKey, ModerationRequest.builder()

@@ -27,7 +27,7 @@ public abstract class AbstractTask {
     @Autowired
     protected ObjectMapper objectMapper;
     @Value("${client.aidevs.apiKey}")
-    private String aiDevsApiKey;
+    protected String aiDevsApiKey;
 
     protected AbstractTask(){
     }
@@ -36,7 +36,7 @@ public abstract class AbstractTask {
         var tokenResponse = aiDevsClient.getToken(taskName, TokenRequest.builder().apikey(aiDevsApiKey).build());
         TaskResponse taskResponse = aiDevsClient.getTask(tokenResponse.getToken());
         log.info("Task compute input {}", taskResponse);
-        JsonNode taskOutput = compute(taskResponse);
+        Object taskOutput = compute(taskResponse);
         log.info("Task compute output {}", taskOutput);
         AnswerResponse answerResponse = aiDevsClient.postAnswer(tokenResponse.getToken(), AnswerRequest.builder().answer(taskOutput).build());
         log.info("Task answer response code={}, msg={}, note={}", answerResponse.getCode(),answerResponse.getMsg(),
@@ -44,7 +44,7 @@ public abstract class AbstractTask {
 
     }
 
-    abstract JsonNode compute(TaskResponse taskResponse);
+    abstract Object compute(TaskResponse taskResponse);
 
     public abstract boolean accept(String taskName);
 }
