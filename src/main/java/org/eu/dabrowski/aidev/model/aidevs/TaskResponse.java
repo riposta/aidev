@@ -14,4 +14,5 @@ public class TaskResponse {
     JsonNode blog;
     String answer;
     String cookie;
+    String question;
 }
