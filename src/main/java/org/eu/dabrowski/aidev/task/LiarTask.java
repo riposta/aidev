@@ -1,5 +1,6 @@
 package org.eu.dabrowski.aidev.task;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.groovy.util.Maps;
@@ -50,9 +51,8 @@ public class LiarTask extends AbstractTask {
         log.info("Task compute input {}", taskResponse);
         Object taskOutput = compute(taskResponse);
         log.info("Task compute output {}", taskOutput);
-        AnswerResponse answerResponse = aiDevsClient.postAnswer(tokenResponse.getToken(), AnswerRequest.builder().answer(taskOutput).build());
-        log.info("Task answer response code={}, msg={}, note={}", answerResponse.getCode(), answerResponse.getMsg(),
-                answerResponse.getNote());
+        JsonNode answerResponse = aiDevsClient.postAnswer(tokenResponse.getToken(), AnswerRequest.builder().answer(taskOutput).build());
+        log.info("Task answer response {}", answerResponse);
     }
 
     @Override

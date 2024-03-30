@@ -10,4 +10,5 @@ public class AnswerResponse {
     int code;
     String msg;
     String note;
+    String reply;
 }

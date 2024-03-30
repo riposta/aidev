@@ -38,9 +38,8 @@ public abstract class AbstractTask {
         log.info("Task compute input {}", taskResponse);
         Object taskOutput = compute(taskResponse);
         log.info("Task compute output {}", taskOutput);
-        AnswerResponse answerResponse = aiDevsClient.postAnswer(tokenResponse.getToken(), AnswerRequest.builder().answer(taskOutput).build());
-        log.info("Task answer response code={}, msg={}, note={}", answerResponse.getCode(),answerResponse.getMsg(),
-                answerResponse.getNote());
+        JsonNode answerResponse = aiDevsClient.postAnswer(tokenResponse.getToken(), AnswerRequest.builder().answer(taskOutput).build());
+        log.info("Task answer response {}", answerResponse);
 
     }
 

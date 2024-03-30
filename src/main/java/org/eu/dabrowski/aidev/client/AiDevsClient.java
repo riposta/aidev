@@ -24,6 +24,6 @@ public interface AiDevsClient {
     TaskResponse sendQuestion(@PathVariable String token, @RequestBody Map<String, ?> form);
 
     @PostMapping(value = "/answer/{token}")
-    AnswerResponse postAnswer(@PathVariable String token, @RequestBody AnswerRequest answerRequest);
+    JsonNode postAnswer(@PathVariable String token, @RequestBody AnswerRequest answerRequest);
 
 }
