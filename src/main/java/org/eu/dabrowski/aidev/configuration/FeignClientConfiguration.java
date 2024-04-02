@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import feign.Logger;
 import feign.RequestInterceptor;
+import feign.Retryer;
 import feign.codec.Decoder;
 import feign.codec.Encoder;
 import feign.codec.ErrorDecoder;
@@ -21,6 +22,8 @@ import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 
 import java.util.UUID;
+
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 @Configuration
 public class FeignClientConfiguration {
@@ -57,8 +60,7 @@ public class FeignClientConfiguration {
     @Bean
     public RequestInterceptor requestInterceptor() {
         return requestTemplate -> {
-            requestTemplate.header("X-Request-Tracking-Id", UUID.randomUUID().toString());
-            requestTemplate.header("X-Request-Session-Id", UUID.randomUUID().toString());
+            requestTemplate.header("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36");
         };
     }
 
@@ -71,5 +73,10 @@ public class FeignClientConfiguration {
     @Bean
     Logger.Level feignLoggerLevel() {
         return Logger.Level.FULL;
+    }
+
+    @Bean
+    public Retryer retryer() {
+        return new LoggingRetryer(1000, SECONDS.toMillis(1), 5);
     }
 }
