@@ -75,8 +75,8 @@ public class FeignClientConfiguration {
         return Logger.Level.FULL;
     }
 
-    @Bean
-    public Retryer retryer() {
-        return new LoggingRetryer(1000, SECONDS.toMillis(1), 5);
-    }
+//    @Bean
+//    public Retryer retryer() {
+//        return new LoggingRetryer(1000, SECONDS.toMillis(1), 5);
+//    }
 }

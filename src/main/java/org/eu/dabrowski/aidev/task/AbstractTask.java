@@ -43,7 +43,7 @@ public abstract class AbstractTask {
 
     }
 
-    abstract Object compute(TaskResponse taskResponse);
+    abstract Object compute(Object taskResponse);
 
     public abstract boolean accept(String taskName);
 }

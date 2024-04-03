@@ -37,7 +37,8 @@ public class LiarTask extends AbstractTask {
 
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
+        TaskResponse taskResponse = (TaskResponse) object;
         SystemPromptTemplate systemPromptTemplate = new SystemPromptTemplate(SYSTEM_TEXT);
         Prompt prompt = new Prompt(List.of(new UserMessage(taskResponse.getAnswer()), systemPromptTemplate.createMessage(Map.of("question", QUESTION))));
         Generation result = super.getChatClient().call(prompt).getResult();

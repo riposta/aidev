@@ -22,7 +22,8 @@ public class RodoTask extends AbstractTask {
             "Response in Polish language. don not repeat any kind information. Response in concisly way.";
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
+        TaskResponse taskResponse = (TaskResponse) object;
 
         return USER_PROMPT;
     }

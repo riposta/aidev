@@ -29,7 +29,7 @@ public class FunctionsTask extends AbstractTask {
     private static String TASK_NAME = "functions";
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
 
         return objectMapper.readTree(functionsResource.getContentAsString(StandardCharsets.UTF_8));
     }

@@ -39,7 +39,8 @@ public class BloggerTask extends AbstractTask {
 
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
+        TaskResponse taskResponse = (TaskResponse) object;
         List<String> responseList = new ArrayList<>();
 
 

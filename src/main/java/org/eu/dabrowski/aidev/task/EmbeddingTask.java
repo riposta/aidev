@@ -20,7 +20,7 @@ public class EmbeddingTask extends AbstractTask {
     private static String TASK_NAME = "embedding";
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
         EmbeddingResponse embeddingResponse = embeddingClient.call(
                 new EmbeddingRequest(List.of(TEXT),
                         OpenAiEmbeddingOptions.builder()

@@ -20,7 +20,8 @@ public class HelloApiTask extends AbstractTask {
 
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
+        TaskResponse taskResponse = (TaskResponse) object;
 
         return taskResponse.getCookie();
     }

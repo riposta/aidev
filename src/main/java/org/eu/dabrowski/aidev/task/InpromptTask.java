@@ -38,7 +38,8 @@ public class InpromptTask extends AbstractTask {
 
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
+        TaskResponse taskResponse = (TaskResponse) object;
         Prompt prompt = new Prompt(List.of(new UserMessage(taskResponse.getQuestion()), new SystemMessage(SYSTEM_TEXT_FIRST)));
         Generation result = super.getChatClient().call(prompt).getResult();
 

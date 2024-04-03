@@ -33,7 +33,7 @@ public class WhisperTask extends AbstractTask {
     private static String TASK_NAME = "whisper";
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
         var transcriptionOptions = OpenAiAudioTranscriptionOptions.builder()
                 .withResponseFormat(OpenAiAudioApi.TranscriptResponseFormat.TEXT)
                 .withTemperature(0f)

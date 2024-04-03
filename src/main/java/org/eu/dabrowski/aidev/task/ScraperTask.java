@@ -47,7 +47,8 @@ public class ScraperTask extends AbstractTask {
 
     @Override
     @SneakyThrows
-    Object compute(TaskResponse taskResponse) {
+    Object compute(Object object) {
+        TaskResponse taskResponse = (TaskResponse) object;
         String url = taskResponse.getInput().asText().replace("\"", "");
         String content = fileClient.getFileContent(url);
         Prompt prompt = new Prompt(List.of(new UserMessage(content + "###" + taskResponse.getMsg() + "###"
