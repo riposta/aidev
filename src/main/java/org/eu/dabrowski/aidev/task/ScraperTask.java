@@ -58,15 +58,6 @@ public class ScraperTask extends AbstractTask {
         return result.getOutput().getContent();
     }
 
-    private List<String> jsonNodeToList(JsonNode jsonNode) {
-        List<String> list = new ArrayList<>();
-        if (jsonNode.isArray()) {
-            for (JsonNode node : jsonNode) {
-                list.add(node.asText());
-            }
-        }
-        return list;
-    }
 
     @Override
     public boolean accept(String taskName) {
