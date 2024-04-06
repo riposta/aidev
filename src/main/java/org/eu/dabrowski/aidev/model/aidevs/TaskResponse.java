@@ -19,4 +19,5 @@ public class TaskResponse {
     String hint1;
     String hint2;
     String hint3;
+    String data;
 }
