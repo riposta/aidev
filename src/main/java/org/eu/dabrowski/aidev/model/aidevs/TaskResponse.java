@@ -1,9 +1,11 @@
 package org.eu.dabrowski.aidev.model.aidevs;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.databind.JsonNode;
 import lombok.Builder;
 import lombok.Data;
+import org.json.JSONPropertyName;
 
 @Builder
 @Data
@@ -20,4 +22,10 @@ public class TaskResponse {
     String hint2;
     String hint3;
     String data;
+
+    @JsonProperty("database #1")
+    String database1;
+    @JsonProperty("database #2")
+    String database2;
 }
+
