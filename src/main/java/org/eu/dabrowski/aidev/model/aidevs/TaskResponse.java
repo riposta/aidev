@@ -22,6 +22,7 @@ public class TaskResponse {
     String hint2;
     String hint3;
     String data;
+    String url;
 
     @JsonProperty("database #1")
     String database1;
