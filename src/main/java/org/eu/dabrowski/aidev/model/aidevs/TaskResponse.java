@@ -27,5 +27,11 @@ public class TaskResponse {
     String database1;
     @JsonProperty("database #2")
     String database2;
+
+    @JsonProperty("example for ToDo")
+    String exampleTodo;
+
+    @JsonProperty("example for Calendar")
+    String exampleCalendar;
 }
 
