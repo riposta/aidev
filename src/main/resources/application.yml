@@ -14,7 +14,7 @@ spring:
       pinecone:
         api-key: <<>>
         index-name: aidevs
-        project-id: lslz2wi
+        project-id: <<>>
         environment: gcp-starter
         namespace: ""
 
@@ -25,6 +25,9 @@ client:
   aidevs:
     url: https://tasks.aidevs.pl
     apiKey: <<>>
+  renderform:
+    url: https://get.renderform.io/api/v2
+    apiKey: <<>>
 
 feign:
   client:
@@ -33,6 +36,14 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
 
-task: ownapi
+task: meme
 
-address: http://<<>>>:8080/
+address: <<>>
+
+logging:
+  level:
+    org:
+      eu:
+        dabrowski:
+          aidev: DEBUG
+

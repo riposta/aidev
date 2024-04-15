@@ -23,6 +23,9 @@ public class TaskResponse {
     String hint3;
     String data;
     String url;
+    String service;
+    String image;
+    String text;
 
     @JsonProperty("database #1")
     String database1;
