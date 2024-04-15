@@ -37,7 +37,7 @@ public class OwnapiProTask extends AbstractTask {
             """;
     private static String SYSTEM_TEXT = """
             I need to answer the prompt.
-            If prompt is a question I need to answer, If prompt is a sentence just confirm it.
+            If prompt is a question I need to answer, If prompt is a sentence just confirm it, answering for sentence is prohibited.
             I can use data knowledge based provided below:
             ###
             {backlog}
@@ -63,7 +63,7 @@ public class OwnapiProTask extends AbstractTask {
         if(result.getOutput().getContent().equals(SENTENCE_RESPONSE)){
             backlog = backlog + "\n" + ownapiRequest.getQuestion();
         }
-        SystemPromptTemplate systemPromptTemplate = new SystemPromptTemplate(SORT_SYSTEM_TEXT);
+        SystemPromptTemplate systemPromptTemplate = new SystemPromptTemplate(SYSTEM_TEXT);
         Prompt userPrompt = new Prompt(List.of(new UserMessage(ownapiRequest.getQuestion()),
                 systemPromptTemplate.createMessage(Map.of("backlog", backlog))));
 
