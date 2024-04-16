@@ -26,7 +26,7 @@ public class GnomeTask extends AbstractTask {
 
 
     private final FileClient fileClient;
-    public GnomeTask(ObjectMapper objectMapper, FileClient fileClient) {
+    public GnomeTask(FileClient fileClient) {
         super();
         this.fileClient = fileClient;
     }

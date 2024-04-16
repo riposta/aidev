@@ -26,6 +26,7 @@ public class TaskResponse {
     String service;
     String image;
     String text;
+    String database;
 
     @JsonProperty("database #1")
     String database1;
