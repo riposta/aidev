@@ -22,6 +22,8 @@ spring:
 client:
   openaimoderationapi:
     url: https://api.openai.com/v1
+  serpapi:
+    apiKey: <<>>
   aidevs:
     url: https://tasks.aidevs.pl
     apiKey: <<>>
@@ -36,7 +38,7 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
 
-task: meme
+task: google
 
 address: <<>>
 

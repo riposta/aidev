@@ -21,6 +21,7 @@ public class TaskResponse {
     String hint1;
     String hint2;
     String hint3;
+    String hint4;
     String data;
     String url;
     String service;

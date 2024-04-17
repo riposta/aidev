@@ -31,7 +31,7 @@ public class OptimaldbTask extends AbstractTask {
     private final FileClient fileClient;
     private static String SYSTEM_TEXT = """
             You will be provided with a block of text, and your task is to extract a list of keywords from it. 
-            Each line should have separate line of keyworlds starting from "-" character.
+            Replying for prompt is strongly prohibited.
             """;
 
     public OptimaldbTask(FileClient fileClient) {
