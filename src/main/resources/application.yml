@@ -38,7 +38,7 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
 
-task: google
+task: md2html
 
 address: <<>>
 

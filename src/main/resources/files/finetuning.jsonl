@@ -1,0 +1,11 @@
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"# Nagłówek1"},{"role":"assistant","content":"<h1>Nagłówek1</h1>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"## Nagłówek2"},{"role":"assistant","content":"<h2>Nagłówek2</h2>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"### Nagłówek3"},{"role":"assistant","content":"<h3>Nagłówek3</h3>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"**pogrubienie**"},{"role":"assistant","content":"<span class=\"bold\">pogrubienie</span>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"*kursywa*"},{"role":"assistant","content":"<em>kursywa</em>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"[AI Devs 3.0](https://aidevs.pl)"},{"role":"assistant","content":"<a href=\"https://aidevs.pl\">AI Devs 3.0</a>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"_podkreślenie_"},{"role":"assistant","content":"<u>podkreślenie</u>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"1. Element listy\n2. Kolejny elementy"},{"role":"assistant","content":"<ol>\n<li>Element listy</li>\n<li>Kolejny element</li>\n</ol>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"# Bardzo _ważny_ tekst"},{"role":"assistant","content":"<h1>Bardzo <u>ważny</u> tekst</h1>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"## This is _important_ and **very cool**"},{"role":"assistant","content":"<h2>This is <u>important</u> and <span class=\\\"bold\\\">very cool</span></h1>"}]}
+{"messages":[{"role":"system","content":"md2html"},{"role":"user","content":"## Dlaczego warto częstować gości **Yerba Mate**?\\n1. Sprawiasz wrażenie bogatego światowca\\n2. _Oszczędzasz na cukrze_\\n3. Nie poproszą o dolewkę\\n4. Jest szansa, że **już Cię więcej nie odwiedzą**"},{"role":"assistant","content":"<h2>Dlaczego warto częstować gości <span class=\"bold\">Yerba Mate</span>?</h2>\n<ol>\n<li>Sprawiasz wrażenie bogatego światowca</li>\n<li><u>Oszczędzasz na cukrze</u></li>\n<li>Nie poproszą o dolewkę</li>\n<li>Jest szansa, że <span class=\"bold\">już Cię więcej nie odwiedzą</span></li>\n</ol>"}]}
